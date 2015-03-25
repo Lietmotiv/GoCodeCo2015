@@ -6,9 +6,12 @@ http://gocode.colorado.gov/
 
 We cannot wait to meet everyone and geek out on Colorado open data at the Go Code Colorado events.  This repo is to provide you a quickstart to integrating to Mercury APIs if you would like to add a payments component to your product.
 
-As you can see from the list above we have made our:  HostedCheckout, MobileWallets, REST, and SOAP integrations available to you for your hacking pleasure.
+#APIs
 
-REST/SOAP are a transmission mechanism but specifically provide access to our Credit, Debit, EBT, PrePaid products.
+* HostedCheckout -- use this API if you want to accept payments by redirecting to Mercury's servers to accept the card data.  Typically integrators use this API for ecommerce sites, to remain out of pa-dss scope, and to lesson the burden of adherring to PCI.
+* MobileWallets -- this API allows you to process transactions using PayPal Mobile In-Store Checkin.  A consumer will check-in to a merchant location using the PayPal mobile app and then our API allows you to get a list of consumers currently checked in at a merchant's location and process a payment for that consumer.  The cool thing about this API is that it allows merchants to accept PayPal transactions on the same MerchantID as the other card brands, they are funded in the same deposit as other card brands, and receive one statement.
+* REST -- REST is simply a transmission mechanism but sometimes integrators are more familiar with REST based API access than other types of access.  This API is typically used when an integrator integrates directly to peripheral devices and needs a way to send the cleartext (or encrypted data).  There is a large conversation around security and compliance if/when your product goes into production but we can walk you through that during the challenge weekend.  REST provides access to all of our Credit, Debit, EBT, PrePaid, etc. products.
+* SOAP -- ditto everything mentioned above for REST except with SOAP you will build a SoapEnvelope and send to our endpoint but the actual products that you will access are the same.
 
 #Contact
 
